@@ -13,6 +13,8 @@ gem 'i18n-js', '~> 3.0', '>= 3.0.11'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
