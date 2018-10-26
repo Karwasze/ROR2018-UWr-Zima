@@ -14,4 +14,6 @@
 //= require i18n
 //= require i18n/translations
 //= require activestorage
+//= require jquery
+//= require bootstrap-sprockets
 //= require_tree .
