@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    application:
+      reservation_app: "Reservation App"
+      year: "2018"
+      edit_profile: "Edit profile"
+      log_out: "Log out"
+      sign_up: "Sign up"
+      log_in: "Log in"
+      sign_in_with_facebook: "Sign in with Facebook"
+      logged_in_as: "Logged in as "
+

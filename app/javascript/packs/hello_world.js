@@ -9,7 +9,7 @@ import Vue from 'vue'
 import HelloWorld from './hello_world/hello_world.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('hello'))
+  const el = document.getElementById("main").appendChild(document.createElement('hello'))
   const app = new Vue({
     el,
     render: h => h(HelloWorld)

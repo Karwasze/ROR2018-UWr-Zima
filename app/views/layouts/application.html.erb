@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Reservationapp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= t('.reservation_app') %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
-    <%= javascript_pack_tag 'hello_world' %>
-    <%= stylesheet_pack_tag 'hello_world' %>
-  </head>
+  <%= javascript_pack_tag 'hello_world' %>
+  <%= stylesheet_pack_tag 'hello_world' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><%= t('.reservation_app') %></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+        <% if user_signed_in? %>
+          <li><%= link_to t('.edit_profile'), edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to t('.log_out'), destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+          <li><a href="#" disabled><%= t('.logged_in_as') %><strong><%= current_user.email %></strong></a></li>
+        <% else %>
+          <li><%= link_to t('.sign_up'), new_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to t('.log_in'), new_user_session_path, :class => 'navbar-link' %></li>
+          <li><%= link_to t('.sign_in_with_facebook'), user_facebook_omniauth_authorize_path %></li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<p class="alert alert-primary" role="alert"><%= notice %></p>
+<p class="alert alert-primary" role="alert"><%= alert %></p>
+<div class="container">
+  <%= yield %>
+</div>
+<footer class="navbar navbar-fixed-bottom">
+  <div class="row">
+    <div class="col-lg-12" style="text-align: center;">
+      <p>Copyright &copy; <%= t('.reservation_app') %> <%= t('.year') %></p>
+    </div>
+  </div>
+</footer>
+</body>
 </html>
