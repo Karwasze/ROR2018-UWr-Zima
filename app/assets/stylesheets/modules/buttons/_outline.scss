@@ -1,0 +1,17 @@
+.btn-outline {
+  color: $PuertoRico;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border-color: $PuertoRico;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus,
+.btn-outline.active {
+  background: $Aquarico;
+  color: $CreamRico;
+  border-color: $Aquarico;
+}

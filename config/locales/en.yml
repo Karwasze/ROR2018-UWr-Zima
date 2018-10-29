@@ -41,4 +41,9 @@ en:
       log_in: "Log in"
       sign_in_with_facebook: "Sign in with Facebook"
       logged_in_as: "Logged in as "
-
+    landing:
+      title: "Reservation App"
+      quote: "where the journey begins"
+      start: "Get Started"
+    navbar:
+      title: "Reservation"
