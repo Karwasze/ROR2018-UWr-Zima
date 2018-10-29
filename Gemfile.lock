@@ -267,7 +267,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  animate-rails
   annotate (~> 2.7, >= 2.7.4)
   awesome_print (~> 1.8)
   better_errors
