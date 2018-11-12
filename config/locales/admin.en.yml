@@ -1,0 +1,7 @@
+en:
+  admin:
+    name: "ADMIN PANEL"
+    users: "Users"
+    places: "Places"
+    categories: "Categories"
+    countries: "Countries"

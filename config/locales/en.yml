@@ -47,3 +47,8 @@ en:
       start: "Get Started"
     navbar:
       title: "Reservation"
+  places:
+    recent: "Recent"
+    add: "Add to list"
+  authentication:
+    error: "You are not allowed to see these resources"

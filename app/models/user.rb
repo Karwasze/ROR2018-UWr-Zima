@@ -19,8 +19,14 @@
 #  uid                    :string
 #
 
-
 class User < ApplicationRecord
+  enum role: %i(user place_owner admin)
+  after_initialize :set_default_role, if: :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   devise :omniauthable, omniauth_providers: [:facebook]
