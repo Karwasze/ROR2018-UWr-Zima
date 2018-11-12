@@ -9,9 +9,7 @@ class FacebookLogin < ApplicationService
   attr_accessor :auth, :user_email
 
   def call
-    user = User.find_by(email: user_email)
-    return create_user unless user
-    user
+    user = User.find_by(email: user_email) || create_user
   end
 
   private
