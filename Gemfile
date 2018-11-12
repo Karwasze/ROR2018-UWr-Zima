@@ -18,6 +18,11 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'omniauth-facebook'
+gem 'kaminari'
+gem 'simple_form'
+gem 'aasm'
+gem 'ransack'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

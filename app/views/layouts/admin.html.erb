@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t("admin.name") %></title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="col-sm-2">
+          <a class="navbar-brand" href="<%= admin_root_path %>"><%= t("admin.name") %></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li <% if params[:controller] == "admin/places" %>class="active" <% end %>><%= link_to t("admin.places") , admin_places_path %></li>
+          <li <% if params[:controller] == "admin/categories" %>class="active" <% end %>><%= link_to t("admin.categories"), admin_categories_path %></li>
+          <li <% if params[:controller] == "admin/countries" %>class="active" <% end %>><%= link_to t("admin.countries"), admin_countries_path %></li>
+          <li <% if params[:controller] == "admin/users" %>class="active" <% end %>><%= link_to t("admin.users"), admin_users_path %></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <% if flash[:notice] %>
+         <div class="notice"><%= flash[:notice] %></div>
+       <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
