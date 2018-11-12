@@ -1,2 +1,0 @@
-module PlaceOwner::PlacesHelper
-end
