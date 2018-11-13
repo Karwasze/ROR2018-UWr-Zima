@@ -1,2 +1,36 @@
-<h1>Admin::Users#index</h1>
-<p>Find me in app/views/admin/places/index.html.erb</p>
+<h1><%= t("admin.user") %></h1>
+
+<div class="col-sm-3">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name_cont, class:"form-control", placeholder: t("admin.users.look_for")%>
+    </div>
+    <%= f.submit t("admin.users.search"), class:"btn btn-primary" %>
+  <% end %>
+</div>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, t("admin.users.id")) %></th>
+      <th><%= sort_link(@q, :first_name, t("admin.users.name")) %></th>
+      <th><%= sort_link(@q, :email, t("admin.users.email")) %></th>
+      <th><%= sort_link(@q, :role, t("admin.users.role")) %></th>
+      <th></th>
+    </tr>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td>
+             <%= link_to t("edit"), edit_admin_user_path(user), class: "btn btn-info btn-xs" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
+
+<%= paginate @users %>

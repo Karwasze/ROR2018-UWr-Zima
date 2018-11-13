@@ -8,7 +8,7 @@
       <p><%= simple_format(truncate(place.description, length: 90)) %></p>
       <p class="lead"><%= number_to_currency place.price %></p>
       <p>
-          <%= link_to add_place_cart_path(place_id: place.id), method: :post, class: "btn btn-primary" do %>
+          <%= link_to root_path, class: "btn btn-primary" do %>
           <span class="fa fa-plus"><%= t("places.add") %></span>
           <% end %>
      </p>

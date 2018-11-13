@@ -14,18 +14,22 @@
           <a class="navbar-brand" href="<%= admin_root_path %>"><%= t("admin.name") %></a>
         </div>
         <ul class="nav navbar-nav">
-          <li <% if params[:controller] == "admin/places" %>class="active" <% end %>><%= link_to t("admin.places") , admin_places_path %></li>
-          <li <% if params[:controller] == "admin/categories" %>class="active" <% end %>><%= link_to t("admin.categories"), admin_categories_path %></li>
-          <li <% if params[:controller] == "admin/countries" %>class="active" <% end %>><%= link_to t("admin.countries"), admin_countries_path %></li>
-          <li <% if params[:controller] == "admin/users" %>class="active" <% end %>><%= link_to t("admin.users"), admin_users_path %></li>
+          <li <% if params[:controller] == "admin/places" %>class="active" <% end %>><%= link_to t("admin.place") , admin_places_path %></li>
+          <li <% if params[:controller] == "admin/categories" %>class="active" <% end %>><%= link_to t("admin.category"), admin_categories_path %></li>
+          <li <% if params[:controller] == "admin/countries" %>class="active" <% end %>><%= link_to t("admin.country"), admin_countries_path %></li>
+          <li <% if params[:controller] == "admin/users" %>class="active" <% end %>><%= link_to t("admin.user"), admin_users_path %></li>
         </ul>
       </div>
     </nav>
-    <div class="container-fluid">
-      <% if flash[:notice] %>
-         <div class="notice"><%= flash[:notice] %></div>
-       <% end %>
-      <%= yield %>
-    </div>
+    <div class="container">
+      <% flash.each do |key, value| %>
+            <div class="<%= bootstrap_class_for(key) %>">
+                  <%= value %>
+            </div>
+      <% end %>
+     </div>
+     <div class="main">
+       <%= yield %>
+     </div>
   </body>
 </html>

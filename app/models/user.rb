@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -17,6 +16,7 @@
 #  updated_at             :datetime         not null
 #  provider               :string
 #  uid                    :string
+#  role                   :integer
 #
 
 class User < ApplicationRecord
@@ -30,4 +30,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   devise :omniauthable, omniauth_providers: [:facebook]
+
+  validates_presence_of :name
 end
