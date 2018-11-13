@@ -1,7 +1,34 @@
 en:
   admin:
     name: "ADMIN PANEL"
-    users: "Users"
-    places: "Places"
-    categories: "Categories"
-    countries: "Countries"
+    user: "Users"
+    place: "Places"
+    category: "Categories"
+    country: "Countries"
+    places:
+      add_new: "Add new place"
+      look_for: "Look for"
+      price_gt: " Price > "
+      search: " Search"
+      name: "Name"
+      price: "Price"
+      category: "Category"
+      country: "Country"
+    categories:
+      add_new: "Add new category"
+      look_for: "Look for"
+      search: " Search"
+      name: "Name"
+    countries:
+      add_new: "Add new country"
+      look_for: "Look for"
+      search: " Search"
+      name: "Name"
+    users:
+      id: "Id"
+      first_name: "First Name"
+      second_name: "Second Name"
+      email: "Email"
+      look_for: "Look for"
+      search: " Search"
+      role: "Role"

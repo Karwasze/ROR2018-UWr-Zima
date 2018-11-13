@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-lg-4 col-lg-offset-4">
+    <%= simple_form_for [:admin, @place] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :long_description %>
+      <%= f.input :price %>
+      <%= f.association :category %>
+      <%= f.association :country %>
+      <%= f.button :submit, class: "btn btn-info"%>
+    <% end %>
+  </div>
+</div>

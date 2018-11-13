@@ -15,11 +15,11 @@ Rails.application.routes.draw do
   get 'about-us', to: 'static#about', as: :about
 
   authenticated :user do
-    root to: "home#index", as: :authenticated_root
+    root to: "places#index", as: :authenticated_root
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root 'places#index'
+  root 'welcome#index'
 
   resources :places, only: %i(show index)
   resources :categories, only: %i(show)

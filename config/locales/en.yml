@@ -31,6 +31,8 @@
 
 en:
   hello: "Hello world"
+  edit: "Edit"
+  delete: "Delete"
   layouts:
     application:
       reservation_app: "Reservation App"

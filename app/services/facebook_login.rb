@@ -9,6 +9,8 @@ class FacebookLogin < ApplicationService
   attr_accessor :auth, :user_email
 
   def call
+    p "Debug!!!!!!!"
+    p auth.info
     user = User.find_by(email: user_email) || create_user
   end
 
@@ -17,6 +19,7 @@ class FacebookLogin < ApplicationService
   def create_user
     User.new.tap do |user|
       user.email = auth.info.email
+      user.name = auth.info.name
       user.password = SecureRandom.base64
       user.skip_confirmation!
       user.save
